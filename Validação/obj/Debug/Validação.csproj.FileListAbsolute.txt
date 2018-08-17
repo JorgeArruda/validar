@@ -1,0 +1,7 @@
+J:\C#\Validação\Validação\bin\Debug\Validação.exe.config
+J:\C#\Validação\Validação\bin\Debug\Validação.exe
+J:\C#\Validação\Validação\bin\Debug\Validação.pdb
+J:\C#\Validação\Validação\obj\Debug\Validação.csprojAssemblyReference.cache
+J:\C#\Validação\Validação\obj\Debug\Validação.csproj.CoreCompileInputs.cache
+J:\C#\Validação\Validação\obj\Debug\Validação.exe
+J:\C#\Validação\Validação\obj\Debug\Validação.pdb
