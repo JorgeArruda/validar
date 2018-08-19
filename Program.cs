@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Validação
 {
@@ -10,13 +6,13 @@ namespace Validação
     {
         static void Main(string[] args)
         {
-            //string cnpj = "61.022.851/0001-20";
-            //Console.Write("Cnpj: " + cnpj + "   " + ValidarCNPJ(cnpj).ToString());
-            //Console.ReadKey();
+            string cnpj = "61.022.851/0001-20";
+            Console.Write("Cnpj: " + cnpj + "   " + ValidarCNPJ(cnpj).ToString());
+            Console.ReadKey();
 
-            //string cpf = "611.022.851-20";
-            //Console.Write("CPF: " + cpf + "   " + ValidarCPF(cpf).ToString());
-            //Console.ReadKey();
+            string cpf = "611.022.851-20";
+            Console.Write("CPF: " + cpf + "   " + ValidarCPF(cpf).ToString());
+            Console.ReadKey();
 
             string pis = "250.96103.56-1";
             Console.Write("PIS: " + pis + "   " + ValidarPIS(pis).ToString());
@@ -72,7 +68,7 @@ namespace Validação
                 return false;
             string pis_temp = pis.Substring(0, 10);
             int[] mult = new int[10] { 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
-            
+
             int resto = GetSomatorio(pis_temp, mult) % 11;
             resto = resto < 2 ? 0 : 11 - resto;
             string digito = resto.ToString();
