@@ -22,7 +22,7 @@ namespace Validação
         public static bool ValidarCNPJ(string cnpj)
         {
             cnpj = cnpj.Replace(" ", "").Replace(".", "").Replace("-", "").Replace("/", "");
-            if (cnpj.Length != 14)
+            if (cnpj.Length != 14 || VerificarIgualdade(cnpj))
                 return false;
             string cnpj_temp = cnpj.Substring(0, 12);
             int[] mult01 = new int[12] { 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
@@ -43,7 +43,7 @@ namespace Validação
         public static bool ValidarCPF(string cpf)
         {
             cpf = cpf.Replace(" ", "").Replace(".", "").Replace("-", "");
-            if (cpf.Length != 11)
+            if (cpf.Length != 11) || VerificarIgualdade(cpf))
                 return false;
             string cpf_temp = cpf.Substring(0, 9);
             int[] mult01 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
@@ -64,7 +64,7 @@ namespace Validação
         public static bool ValidarPIS(string pis)
         {
             pis = pis.Replace(" ", "").Replace(".", "").Replace("-", "");
-            if (pis.Length != 11)
+            if (pis.Length != 11 || VerificarIgualdade(pis))
                 return false;
             string pis_temp = pis.Substring(0, 10);
             int[] mult = new int[10] { 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
@@ -103,6 +103,14 @@ namespace Validação
             for (int i = 0; i < array.Length; i++)
                 resultado += int.Parse(array[i].ToString()) * mult[i];
             return resultado;
+        }
+
+        public static bool VerificarIgualdade(string valor)
+        {
+            for (int i = 1; i < valor.Length; i++)
+                if (valor[i - 1] != valor[i])
+                    return false;
+            return true;
         }
     }
 }
